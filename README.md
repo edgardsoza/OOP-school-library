@@ -107,7 +107,7 @@ irb> my_list.rb
 - [GitHub](https://github.com/edgardsoza)
 - [LinkedIn](https://www.linkedin.com/in/edgard-soza-sobalvarro/)
 
-<p align="right">(<a href="#readme-top">👆</a>)</p>
+<p align="right"><a href="#readme-top">👆</a></p>
 
 <!-- FUTURE FEATURES -->
 
