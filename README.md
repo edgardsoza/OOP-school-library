@@ -1,9 +1,8 @@
+<a name="readme-top"></a>
+
 # OOP School Library
 
- Program based on Ruby to implement classes and objects in Ruby.
-
-
-<a name="readme-top"></a>
+Program based on Ruby to implement classes and objects in Ruby.
 
 <!-- TABLE OF CONTENTS -->
 
@@ -89,7 +88,7 @@ In order to run this project you need to:
 Clone the repo into your local machine:
 
 ```bash
-git clone git@github.com:edgardsoza/enumerable/tree/enumerable.git
+git clone git@github.com:edgardsoza/enumerable/tree/OOP-school-library.git
 ```
 
 ### Usage
