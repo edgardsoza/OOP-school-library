@@ -63,14 +63,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Check all
-- Check any
-- Filter
+- Add person
+- Add student
+- Add teacher
 
-
-<p align="right"><a href="#readme-top">👆</a></p>
-
-<!-- LIVE DEMO -->
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
