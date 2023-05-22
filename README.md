@@ -2,7 +2,7 @@
 
 # OOP School Library
 
-Program based on Ruby to implement classes and objects in Ruby.
+Program based on Ruby to implement classes and objects.
 
 <!-- TABLE OF CONTENTS -->
 
