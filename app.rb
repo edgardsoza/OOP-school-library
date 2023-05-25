@@ -119,7 +119,9 @@ class App
     selected_book = @books[book_index]
 
     puts '=== Select a Person === Use number and not Id'
-    @people.each_with_index { |person, index| puts "#{index + 1}. #{person.name}, Id: #{person.id} , Age: #{person.age}" }
+    @people.each_with_index do |person, index|
+      puts "#{index + 1}. #{person.name}, Id: #{person.id} , Age: #{person.age}"
+    end
     person_index = gets.chomp.to_i - 1
     selected_person = @people[person_index]
 
