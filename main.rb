@@ -1,11 +1,9 @@
 require_relative './app'
 
-class Main
-  def self.home_page
-    puts 'Welcome to School Library Home Page!'
-    puts 'Please enter a number: '
-
-    @content = {
+class MainPage
+  def initialize(app)
+    @app = app
+    @options = {
       '1' => 'List all books',
       '2' => 'List all people',
       '3' => 'Create a person',
@@ -14,38 +12,49 @@ class Main
       '6' => 'List all rentals for a given person id',
       '7' => 'Exit'
     }
-    @content.each { |index, string| puts "#{index} - #{string}" }
-
-    Integer(gets.chomp)
   end
 
-  app = App.new
+  def display_options
+    puts 'Welcome to School Library Home Page!'
+    puts 'Please enter a number: '
 
-  loop do
-    case home_page
-    when 1
-      app.list_all_books
-    when 2
-      app.list_all_people
-    when 3
-      app.create_person
-    when 4
-      app.create_book
-    when 5
-      app.create_rental
-    when 6
-      app.rental_list
-    when 7
+    @options.each { |index, string| puts "#{index} - #{string}" }
+  end
+
+  def handle_option(option)
+    case option
+    when '1'
+      @app.list_all_books
+    when '2'
+      @app.list_all_people
+    when '3'
+      @app.create_person
+    when '4'
+      @app.create_book
+    when '5'
+      @app.create_rental
+    when '6'
+      @app.rental_list
+    when '7'
       puts 'I hope you enjoyed our app'
       exit
     else
       puts 'The selected option does not exist'
     end
   end
+
+  def run
+    loop do
+      display_options
+      option = gets.chomp
+      handle_option(option)
+    end
+  end
 end
 
 def main
-  App.new
+  app = App.new
+  MainPage.new(app).run
 end
 
-Main
+main
