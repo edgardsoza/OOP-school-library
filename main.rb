@@ -52,7 +52,8 @@ def exit_app
 end
 
 def main
-  loop do
+  option = 1
+  while option != 7
     option = menu
     handle_option(option)
   end
