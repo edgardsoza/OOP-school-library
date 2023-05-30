@@ -1,57 +1,52 @@
 require_relative './app'
 
-class MainPage
-  def initialize(app)
-    @app = app
-    @options = {
-      '1' => [:list_all_books, 'List all books'],
-      '2' => [:list_all_people, 'List all people'],
-      '3' => [:create_person, 'Create a person'],
-      '4' => [:create_book, 'Create a book'],
-      '5' => [:create_rental, 'Create a rental'],
-      '6' => [:rental_list, 'List all rentals for a given person id'],
-      '7' => [:exit_app, 'Exit']
-    }
+def menu
+  puts 'Welcome to School Library Home Page!'
+  puts 'Please enter a number: '
+  puts '1 - List all books'
+  puts '2 - List all people'
+  puts '3 - Create a person'
+  puts '4 - Create a book'
+  puts '5 - Create a rental'
+  puts '6 - List all rentals for a given person id'
+  puts '7 - Exit'
+  option = gets.chomp.to_i
+  option
+end
+
+  def handle_option(option)
+    app = App.new
+    case option
+      when 1
+        app.list_all_books
+      when 2
+        app.list_all_people
+      when 3
+        app.create_person
+      when 4
+        app.create_book
+      when 5
+        app.create_rental
+      when 6
+        app.rental_list
+      when 7
+        exit_app
+      else
+        invalid_option
+      end
+  end
+
+  def invalid_option
+    puts 'Invalid option. Please try again.'
+    option = gets.chomp.to_i
+    handle_option(option)
   end
 
   def display_options
     puts 'Welcome to School Library Home Page!'
     puts 'Please enter a number: '
 
-    @options.each { |index, (_method_name, string)| puts "#{index} - #{string}" }
-  end
-
-  def handle_option(option)
-    action = @options[option]
-    if action
-      send(action[0])
-    else
-      puts 'The selected option does not exist'
-    end
-  end
-
-  def list_all_books
-    @app.list_all_books
-  end
-
-  def list_all_people
-    @app.list_all_people
-  end
-
-  def create_person
-    @app.create_person
-  end
-
-  def create_book
-    @app.create_book
-  end
-
-  def create_rental
-    @app.create_rental
-  end
-
-  def rental_list
-    @app.rental_list
+    options.each { |index, string| puts "#{index} - #{string}" }
   end
 
   def exit_app
@@ -59,18 +54,11 @@ class MainPage
     exit
   end
 
-  def run
+  def main
     loop do
-      display_options
-      option = gets.chomp
+      option = menu
       handle_option(option)
     end
   end
-end
-
-def main
-  app = App.new
-  MainPage.new(app).run
-end
 
 main
