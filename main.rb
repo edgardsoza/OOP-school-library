@@ -44,6 +44,7 @@ def main
     handle_option(app, option)
   end
   puts 'I hope you enjoyed our app'
+  exit
 end
 
 main
