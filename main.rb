@@ -14,8 +14,7 @@ def menu
   (option < 1) || (option > 7) ? invalid_option : option
 end
 
-def handle_option(option)
-  app = App.new
+def handle_option(app, option)
   case option
   when 1
     app.list_all_books
@@ -39,9 +38,10 @@ end
 
 def main
   option = 1
+  app = App.new
   while (option < 7) && option.positive?
     option = menu
-    handle_option(option)
+    handle_option(app, option)
   end
   puts 'I hope you enjoyed our app'
 end
