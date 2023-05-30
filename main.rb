@@ -10,7 +10,10 @@ def menu
   puts '5 - Create a rental'
   puts '6 - List all rentals for a given person id'
   puts '7 - Exit'
-  gets.chomp.to_i
+  option = gets.chomp.to_i
+  return unless (option < 1) || (option > 7)
+
+  invalid_option
 end
 
 def handle_option(option)
@@ -28,17 +31,12 @@ def handle_option(option)
     app.create_rental
   when 6
     app.rental_list
-  when 7
-    exit_app
-  else
-    invalid_option
   end
 end
 
 def invalid_option
   puts 'Invalid option. Please try again.'
-  option = gets.chomp.to_i
-  handle_option(option)
+  menu
 end
 
 def display_options
