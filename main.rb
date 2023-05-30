@@ -11,7 +11,7 @@ def menu
   puts '6 - List all rentals for a given person id'
   puts '7 - Exit'
   option = gets.chomp.to_i
-  (option > 7) || (option < 1) ? invalid_option : option
+  (option < 1) || (option > 7) ? invalid_option : option
 end
 
 def handle_option(option)
