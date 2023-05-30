@@ -107,6 +107,18 @@ irb> my_list.rb
 - [GitHub](https://github.com/edgardsoza)
 - [LinkedIn](https://www.linkedin.com/in/edgard-soza-sobalvarro/)
 
+👤 **Muhammed B**
+
+- GitHub: [@githubhandle](https://github.com/muhammedb8826)
+- Twitter: [@twitterhandle](https://twitter.com/muhammedb8826)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammedb8826/)
+
+👤 **Juan Zorrilla**
+
+- GitHub: [@Swarzstein](https://github.com/Swarzstein)
+- LinkedIn: [Juan Zorrilla](https://www.linkedin.com/in/juan-a-zorrilla/)
+
+
 <p align="right"><a href="#readme-top">👆</a></p>
 
 <!-- FUTURE FEATURES -->
