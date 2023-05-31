@@ -1,6 +1,5 @@
 require_relative './app'
 
-
 def clear_screen
   system('cls')
   system('clear')
