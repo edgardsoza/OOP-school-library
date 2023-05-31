@@ -7,7 +7,9 @@ describe Decorator do
       expect(decorator).to be_instance_of(Decorator)
     end
     it 'correct_name method expected to raise an error' do
-      expect {decorator.correct_name}.to raise_error("Subclasses must implement correct_name method", NotImplementedError)
+      expect do
+        decorator.correct_name
+      end.to raise_error('Subclasses must implement correct_name method', NotImplementedError)
     end
   end
 end

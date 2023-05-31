@@ -9,7 +9,7 @@ describe Nameable do
     it 'correct_name method expected to raise an error' do
       expect do
         nameable.correct_name
-      end.to raise_error("Subclasses must implement correct_name method", NotImplementedError)
+      end.to raise_error('Subclasses must implement correct_name method', NotImplementedError)
     end
   end
 end
