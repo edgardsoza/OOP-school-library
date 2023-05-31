@@ -33,6 +33,8 @@ class Person < Nameable
     @age >= 18
   end
 
+  public
+
   def to_json(*_args)
     {
       JSON.create_id => self.class.name,
