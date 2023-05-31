@@ -4,7 +4,7 @@ require 'json'
 
 class Student < Person
   def initialize(age, name = 'Unknown', parent_permission: true, id: Random.rand(1..10_000))
-    super(age, name, parent_permission: parent_permission, id)
+    super(age, name, parent_permission: parent_permission, id: id)
     @classroom = classroom
   end
 
@@ -27,7 +27,7 @@ class Student < Person
   end 
 
   def self.json_create(o)
-    new(o['data']['age'], o['data']['name'], parent_permission: o['data']['parent_permission'], id: 0['data']['id'])
+    new(o['data']['age'], o['data']['name'], parent_permission: o['data']['parent_permission'], id: o['data']['id'])
   end
 
 end

@@ -22,4 +22,3 @@ class Rental
     }.to_json(*_args)
   end
 end
-
