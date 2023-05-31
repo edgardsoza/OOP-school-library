@@ -7,8 +7,10 @@ require_relative 'classes/rental'
 require_relative 'classes/decorator'
 require_relative 'classes/trimmerdecorator'
 require_relative 'classes/capitalizedecorator'
+require_relative 'modules/store'
 
 class App
+  include Store
   def initialize
     @people = []
     @books = []
