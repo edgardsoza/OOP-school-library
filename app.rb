@@ -19,7 +19,18 @@ class App
     @rentals = []
   end
 
+  def wait_for_keypress
+    puts 'Press any key to continue...'
+    gets
+  end
+
+  def clear_screen
+    system('cls')
+    system('clear')
+  end
+
   def list_all_books
+    clear_screen
     if @books.empty?
       puts 'No books available.'
     else
@@ -30,9 +41,11 @@ class App
         puts '---'
       end
     end
+    wait_for_keypress
   end
 
   def list_all_people
+    clear_screen
     if @people.empty?
       puts 'No people available.'
     else
@@ -44,9 +57,11 @@ class App
         puts '---'
       end
     end
+    wait_for_keypress
   end
 
   def create_person
+    clear_screen
     puts 'Select the person type:'
     puts '1. Student'
     puts '2. Teacher'
@@ -59,6 +74,7 @@ class App
       create_teacher
     else
       puts 'Invalid option. Person not created.'
+      wait_for_keypress
     end
   end
 
@@ -83,6 +99,7 @@ class App
     else
       puts 'Invalid option. Student not created.'
     end
+    wait_for_keypress
   end
 
   def create_teacher
@@ -98,6 +115,7 @@ class App
     teacher = Teacher.new(specialization, age, name, parent_permission: true)
     @people.push(teacher)
     puts 'Teacher created successfully.'
+    wait_for_keypress
   end
 
   def create_book
@@ -111,9 +129,11 @@ class App
     @books << book
 
     puts 'Book created successfully:'
+    wait_for_keypress
   end
 
   def create_rental
+    clear_screen
     return puts 'No books available.' if @books.empty?
     return puts 'No people available.' if @people.empty?
 
@@ -139,9 +159,14 @@ class App
     puts "Book: #{selected_book.title} by #{selected_book.author}"
     puts "Person: #{selected_person.name}, Age: #{selected_person.age}"
     puts "Date: #{rental.date}"
+    wait_for_keypress
   end
 
   def rental_list
+    clear_screen
+    @people.each do |person|
+      puts "Id: #{person.id} Name: #{person.name}"
+    end
     puts 'Enter the person ID:'
     person_id = gets.chomp.to_i
 
@@ -152,10 +177,12 @@ class App
     else
       puts "=== Rentals for Person ID #{person_id} ==="
       rentals.each do |rental|
+        puts "Person: #{rental.person.name}"
         puts "Book: #{rental.book.title} by #{rental.book.author}"
         puts "Rental Date: #{rental.date}"
         puts '---'
       end
     end
+    wait_for_keypress
   end
 end
