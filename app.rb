@@ -155,10 +155,7 @@ class App
     rental = Rental.new(date, selected_book, selected_person)
     @rentals << rental
 
-    puts 'Rental created successfully:'
-    puts "Book: #{selected_book.title} by #{selected_book.author}"
-    puts "Person: #{selected_person.name}, Age: #{selected_person.age}"
-    puts "Date: #{rental.date}"
+    puts 'Rental created successfully'
     wait_for_keypress
   end
 
