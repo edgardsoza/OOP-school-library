@@ -2,6 +2,7 @@ require 'json'
 
 class Book
   attr_accessor :title, :author, :rentals
+  attr_reader :id
 
   def initialize(title, author, id: Random.rand(1..10_000))
     @id = id

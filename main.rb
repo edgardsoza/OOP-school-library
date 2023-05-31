@@ -41,6 +41,8 @@ def main
   app = App.new
   app.load_people
   app.load_books
+  app.load_rentals
+  p app.rentals
   while (option < 7) && option.positive?
     option = menu
     handle_option(app, option)
@@ -48,6 +50,7 @@ def main
   puts 'I hope you enjoyed our app'
   app.save_people
   app.save_books
+  app.save_rentals
 end
 
 main

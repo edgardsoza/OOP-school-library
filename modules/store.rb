@@ -27,5 +27,20 @@ module Store
     end
   end
 
+  def save_rentals
+    File.open('data/rentals.json', 'w') do |f|
+      f.write(@rentals.to_json)
+    end
+  end
+
+  def load_rentals
+    if File.exist?('data/rentals.json')
+    JSON.parse(File.read('data/rentals.json')).map do |rental|
+      person = @people.find{|person| person.id == rental.person}
+      book = @books.find{|book| book.id == rental.book}
+      @rentals << Rental.new(rental.date, book, person)
+    end
+    end
+  end
 end
 
