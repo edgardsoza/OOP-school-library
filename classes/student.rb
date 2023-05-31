@@ -3,8 +3,8 @@ require_relative './classroom'
 require 'json'
 
 class Student < Person
-  def initialize(age, name = 'Unknown', parent_permission: true)
-    super(age, name, parent_permission: parent_permission)
+  def initialize(age, name = 'Unknown', parent_permission: true, id: Random.rand(1..10_000))
+    super(age, name, parent_permission: parent_permission, id)
     @classroom = classroom
   end
 
@@ -18,4 +18,16 @@ class Student < Person
     @classroom = classroom
     classroom.students.push(self) unless classroom.students.include?(self)
   end
+
+  def to_json(*a)
+    {
+      'json_class' => self.class.name,
+      'data' => { 'id' => @id, 'age' => @age, 'name' => @name, 'parent_permission' => @parent_permission }
+    }.to_json(*a)
+  end 
+
+  def self.json_create(o)
+    new(o['data']['age'], o['data']['name'], parent_permission: o['data']['parent_permission'], id: 0['data']['id'])
+  end
+
 end

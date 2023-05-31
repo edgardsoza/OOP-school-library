@@ -6,7 +6,7 @@ class Person < Nameable
   attr_accessor :name, :age, :parent_permission
   attr_reader :id, :rentals
 
-  def initialize(age, name = 'Unknown', parent_permission: true, id = Random.rand(1..10_000))
+  def initialize(age, name = 'Unknown', parent_permission: true, id: Random.rand(1..10_000))
     super()
     @id = id
     @name = name
@@ -44,6 +44,6 @@ class Person < Nameable
   end
 
   def self.json_create(object)
-    new(object['age'], object['name'], parent_permission: object['parent_permission'])
+    new(object['age'], object['name'], parent_permission: object['parent_permission'], id: object['id'])
   end
 end
