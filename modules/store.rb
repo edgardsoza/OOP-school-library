@@ -36,9 +36,9 @@ module Store
   def load_rentals
     if File.exist?('data/rentals.json')
     JSON.parse(File.read('data/rentals.json')).map do |rental|
-      person = @people.find{|person| person.id == rental.person}
-      book = @books.find{|book| book.id == rental.book}
-      @rentals << Rental.new(rental.date, book, person)
+      person = @people.find{|person| person.id == rental['person']}
+      book = @books.find{|book| book.id == rental['book']}
+      @rentals << Rental.new(rental['date'], book, person)
     end
     end
   end
