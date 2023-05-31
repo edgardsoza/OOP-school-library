@@ -1,4 +1,4 @@
-require_relative './rental'
+requere 'json'
 
 class Book
   attr_accessor :title, :author, :rentals

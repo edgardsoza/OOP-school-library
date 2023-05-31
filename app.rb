@@ -1,12 +1,12 @@
-require_relative './person'
-require_relative './student'
-require_relative './teacher'
-require_relative './classroom'
-require_relative './book'
-require_relative './rental'
-require_relative './decorator'
-require_relative './trimmerdecorator'
-require_relative './capitalizedecorator'
+require_relative 'classes/person'
+require_relative 'classes/student'
+require_relative 'classes/teacher'
+require_relative 'classes/classroom'
+require_relative 'classes/book'
+require_relative 'classes/rental'
+require_relative 'classes/decorator'
+require_relative 'classes/trimmerdecorator'
+require_relative 'classes/capitalizedecorator'
 
 class App
   def initialize

@@ -12,4 +12,14 @@ class Rental
     book.rentals << self
     person.rentals << self
   end
+
+  def to_json(*_args)
+    {
+      JSON.create_id => self.class.name,
+      'date' => @date,
+      'book' => @book.id,
+      'person' => @person.id
+    }.to_json(*_args)
+  end
 end
+

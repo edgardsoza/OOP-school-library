@@ -1,5 +1,6 @@
 require_relative './person'
 require_relative './classroom'
+require 'json'
 
 class Student < Person
   def initialize(age, name = 'Unknown', parent_permission: true)
