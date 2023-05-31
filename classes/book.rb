@@ -15,17 +15,16 @@ class Book
     Rental.new(date, self, person)
   end
 
-  def to_json(*a)
+  def to_json(*args)
     {
       'json_class' => self.class.name,
-      "id" => @id,
-      "title" => @title,
-      "author" => @author
-    }.to_json(*a)
+      'id' => @id,
+      'title' => @title,
+      'author' => @author
+    }.to_json(*args)
   end
 
-  def self.json_create(o)
-    new(o["title"], o["author"], id: o["id"])
+  def self.json_create(object)
+    new(object['title'], object['author'], id: object['id'])
   end
-
 end

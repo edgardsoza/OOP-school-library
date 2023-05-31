@@ -19,15 +19,15 @@ class Student < Person
     classroom.students.push(self) unless classroom.students.include?(self)
   end
 
-  def to_json(*a)
+  def to_json(*args)
     {
       'json_class' => self.class.name,
       'data' => { 'id' => @id, 'age' => @age, 'name' => @name, 'parent_permission' => @parent_permission }
-    }.to_json(*a)
-  end 
-
-  def self.json_create(o)
-    new(o['data']['age'], o['data']['name'], parent_permission: o['data']['parent_permission'], id: o['data']['id'])
+    }.to_json(*args)
   end
 
+  def self.json_create(object)
+    new(object['data']['age'], object['data']['name'], parent_permission: object['data']['parent_permission'],
+                                                       id: object['data']['id'])
+  end
 end

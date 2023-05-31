@@ -12,6 +12,7 @@ require_relative 'modules/store'
 class App
   include Store
   attr_accessor :people, :books, :rentals
+
   def initialize
     @people = []
     @books = []

@@ -10,15 +10,15 @@ class Teacher < Person
     true
   end
 
-  def to_json(*a)
+  def to_json(*args)
     {
       'json_class' => self.class.name,
-      'data' => { 'id' => @id, 'age' => @age, 'name' => @name, 'specialization' => @specialization}
-    }.to_json(*a)
-  end 
-
-  def self.json_create(o)
-    new(o['data']['specialization'], o['data']['age'], o['data']['name'], parent_permission: o['data']['parent_permission'], id: o['data']['id'])
+      'data' => { 'id' => @id, 'age' => @age, 'name' => @name, 'specialization' => @specialization }
+    }.to_json(*args)
   end
 
+  def self.json_create(object)
+    new(object['data']['specialization'], object['data']['age'], object['data']['name'],
+        parent_permission: object['data']['parent_permission'], id: object['data']['id'])
+  end
 end
