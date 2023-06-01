@@ -11,8 +11,8 @@ describe Student do
 
   context 'Test the to_json method in Student' do
     it 'passes the info as a json format to store' do
-      expect(student.to_json).to eq('{"json_class":"Student",'\
-                                    '"data":{"id":1,"age":18,"name":"John Doe",'\
+      expect(student.to_json).to eq('{"json_class":"Student",' \
+                                    '"data":{"id":1,"age":18,"name":"John Doe",' \
                                     '"classroom":null,"parent_permission":true}}')
     end
   end
